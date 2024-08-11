@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} 
+Update
+{% endblock %}
+{% block body %}
+
+<!--Bootstrap Form-->
+
+<div class="container my-3">
+    <h2>Page Update</h2>
+    <form action="/update/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Todo Title</label>
+          <input type="text" class="form-control" name="title" value="{{todo.title}}" id="title" aria-describedby="emailHelp">
+          <div id="text" class="form-text">Add the titile for the todo list</div>
+        </div>
+        <div class="mb-3">
+          <label for="text" class="form-label">Todo Description</label>
+          <input type="text" class="form-control" value="{{todo.desc}}" name="desc" id="desc">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+  </div>
+
+  {% endblock body %}
